@@ -20,6 +20,13 @@ exports.seed = function(knex, Promise) {
                 /* we need to hash this before publishing*/
                 first_name: 'Chris',
                 last_name: 'Houdlette'
+            }, {
+                email: 'scorchoNiN@aol.com',
+                password: '1234',
+                /* we need to hash this before publishing*/
+                first_name: 'Tyler',
+                last_name: 'In MiddleSchool',
+                is_admin: true
             }]
             return knex('profile').insert(profiles);
         });
