@@ -6,3 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+
+.nav-wrapper {
+  background-color:#ff0044;
+}
+
+.input-field {
+  display:flex;
+  flex-direction:column;
+}
+
+.input-field label {
+  color: #fff
+}
+
+.btn-flat {
+  color:#fff;
+}
