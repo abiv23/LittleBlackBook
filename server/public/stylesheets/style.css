@@ -3,14 +3,16 @@ body {
 }
 
 /* nav styling */
+.container {
+    width:85%;
+}
 
+header {
+  margin-bottom: 1em;
+}
 
 a {
   color: #00B7FF;
-}
-
-.nav-wrapper {
-  background-color:#ff0044;
 }
 
 .input-field {
@@ -26,6 +28,7 @@ nav .input-field input {
   background-color: #fff;
   color: #626262;
   font-size: .8em;
+  padding-left: 0;
 }
 
 .btn-flat {
@@ -35,3 +38,18 @@ nav .input-field input {
 .brand-logo {
   margin-left: .5em;
 }
+
+.pass-field {
+  margin-left: 1em;
+}
+
+.right-nav {
+  display:flex;
+  justify-content: space-around;
+}
+
+.row .col .m4 {
+  margin-left: 1em;
+}
+
+/* main content styling */
