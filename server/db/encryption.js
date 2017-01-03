@@ -7,12 +7,14 @@ module.exports = {
         })
     },
     decrypt: function(hash, plainText) {
-      return bcrypt.compare(plainText, hash, function(err, res) {
+      return bcrypt.compare(plainText, hash).then(function(res) {
+        console.log(res);
             if (res === true) {
-                console.log('Correct Password!');
-            } else console.log('Wrong Password');
+              return true;
+            } else {
+              return false;
+            }
         });
-
     }
 
 }
