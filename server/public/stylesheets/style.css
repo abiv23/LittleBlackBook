@@ -1,7 +1,9 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+/* nav styling */
+
 
 a {
   color: #00B7FF;
@@ -13,13 +15,23 @@ a {
 
 .input-field {
   display:flex;
-  flex-direction:column;
 }
 
 .input-field label {
-  color: #fff
+  color: #fff;
+  font-size: .9em;
+}
+
+nav .input-field input {
+  background-color: #fff;
+  color: #626262;
+  font-size: .8em;
 }
 
 .btn-flat {
   color:#fff;
+}
+
+.brand-logo {
+  margin-left: .5em;
 }

@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://use.fontawesome.com/00eee0672f.js"></script>
-  </head>
-  <body>
-    <nav>
-      <div class="row">
-      <div class="nav-wrapper">
-        <div class="col s6">
-          <i class="fa fa-book fa-3x" aria-hidden="true"></i>
-          <a href="#" class="brand-logo">Little Black Book</a>
-        </div>
+</head>
 
-        <div class="col s6">
-        <form class="login_info" action="/login" method="post">
-          <div class="input-field col s4">
-            <label for="email">Email</label>
-            <input name="email" id="user_email" type="email" class="validate" required>
-          </div>
+<body>
+    <header>
+        <nav class="grey darken-1">
+            <div class="row">
+                <div class="nav-wrapper">
+                    <div class="col 12 m6">
+                        <i class="fa fa-book fa-3x" aria-hidden="true"></i>
+                        <a href="#" class="brand-logo">Little Black Book</a>
+                    </div>
 
-          <div class="input-field col s4">
-            <label for="password">Password</label>
-            <input name="password" id="password" type="password" class="validate" required>
-          </div>
+                    <div class="col s12 m4">
+                        <form class="login_info valign-wrapper" action="/login" method="post">
+                            <div class="input-field col s6 m4 valign">
+                                <label for="email">Email</label>
+                                <input name="email" id="user_email" type="email" class="validate valign" required>
+                            </div>
+                            <div class="input-field col s6 m4">
+                                <label for="password">Password</label>
+                                <input name="password" id="password" type="password" class="validate" required>
+                            </div>
 
-          <div class="col s3">
-            <button type="submit" class=" blue lighten-2 btn-flat">Login</button>
-          </div>
+                            <div class="col s4">
+                                <button type="submit" class=" blue lighten-2 btn-flat">Login</button>
+                            </div>
+                        </form>
 
-        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="col s7">
+                    <h3>Manage your entire dating life in one easy place</h3>
+                </div>
+                <div class="col s5">
+                    <h1>Sign up form goes here!</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
 
-        </div>
-      </div>
-      </div>
-    </nav>
-    <h1>{{title}}</h1>
-    <h3>This is our app</h3>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  </body>
+</body>
+
 </html>
