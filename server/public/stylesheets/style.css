@@ -15,3 +15,11 @@ a {
   display:flex;
   flex-direction:column;
 }
+
+.input-field label {
+  color: #fff
+}
+
+.btn-flat {
+  color:#fff;
+}

@@ -4,29 +4,31 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://use.fontawesome.com/00eee0672f.js"></script>
   </head>
   <body>
     <nav>
       <div class="row">
       <div class="nav-wrapper">
         <div class="col s6">
+          <i class="fa fa-book fa-3x" aria-hidden="true"></i>
           <a href="#" class="brand-logo">Little Black Book</a>
         </div>
 
         <div class="col s6">
         <form class="login_info" action="/login" method="post">
           <div class="input-field col s4">
-            <label for="user_email">Email</label>
-            <input name="user_email" id="user_email" type="text" class="validate">
+            <label for="email">Email</label>
+            <input name="email" id="user_email" type="email" class="validate" required>
           </div>
 
           <div class="input-field col s4">
             <label for="password">Password</label>
-            <input name="password" id="password" type="password" class="validate">
+            <input name="password" id="password" type="password" class="validate" required>
           </div>
 
           <div class="col s3">
-            <button type="submit">Login</button>
+            <button type="submit" class=" blue lighten-2 btn-flat">Login</button>
           </div>
 
         </form>
