@@ -13,11 +13,12 @@ router.get('/', function(req, res, next) {
 /* GET home page. */
 router.post('/', function(req, res, next) {
     let profile = req.body;
-    knex.select().table('profile').where('email', profile.email)
+    knex.select().table('profile').where('email', profile.email).first()
         .then(data => {
             protect.decrypt(data.password, profile.password);
+            console.log(data.password);
         });
-    console.log(req.body)
+    // console.log(req.body)
 
 });
 
