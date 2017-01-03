@@ -1,6 +1,7 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
     return knex('profile').del()
+    knex.raw('TRUNCATE profile RESTART IDENTITY CASCADE;')
         .then(() => {
             const profiles = [{
                 email: 'Joe.umm.Blow@hotmail.com',
