@@ -1,7 +1,7 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex('interest').del()
-    knex.raw('TRUNCATE interest RESTART IDENTITY CASCADE;')
+    return knex('interest').del().then(
+        knex.raw('TRUNCATE interest RESTART IDENTITY CASCADE;')
         .then(() => {
             const interests = [{
                 interest_name: 'Hiking'
@@ -13,5 +13,5 @@ exports.seed = function(knex, Promise) {
                 interest_name: 'Reading'
             }]
             return knex('interest').insert(interests);
-        });
+        }));
 };
