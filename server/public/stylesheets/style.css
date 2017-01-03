@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* nav styling */
+.container {
+    width:85%;
+}
+
+header {
+  margin-bottom: 1em;
 }
 
 a {
   color: #00B7FF;
 }
+
+.input-field {
+  display:flex;
+}
+
+.input-field label {
+  color: #fff;
+  font-size: .9em;
+}
+
+nav .input-field input {
+  background-color: #fff;
+  color: #626262;
+  font-size: .8em;
+  padding-left: 0;
+}
+
+.btn-flat {
+  color:#fff;
+}
+
+.brand-logo {
+  margin-left: .5em;
+}
+
+.pass-field {
+  margin-left: 1em;
+}
+
+.right-nav {
+  display:flex;
+  justify-content: space-around;
+}
+
+.row .col .m4 {
+  margin-left: 1em;
+}
+
+/* main content styling */
