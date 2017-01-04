@@ -62,4 +62,9 @@ nav .input-field input {
 .outline-me {
   border: red 1px solid;
 }
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
 /* main content styling */
