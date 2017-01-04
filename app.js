@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
+var signup = require('./routes/signup');
 var app = express();
 
 
@@ -28,7 +29,7 @@ app.use('/', index);
 app.use('/profile', profile);
 app.use('/login', login);
 app.use('/admin', admin);
-
+app.use('/signup', signup);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -44,7 +45,10 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err: {}
+  })
 });
 
 
