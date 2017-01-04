@@ -7,7 +7,6 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://use.fontawesome.com/00eee0672f.js"></script>
 </head>
-
 <body>
     <header>
         <nav class="grey darken-1">
@@ -46,7 +45,7 @@
                       <td>{{this.email}}</td>
                       <td>{{this.password}}</td>
                       <td><a href='profile/{{this.id}}/edit'>Edit</a></td>
-                      <td><a href='profile/{{this.id}}/delete'>Delete</a></td>
+                      <td><form action='profile/{{this.id}}/delete?_method=delete' method='post'</form><button type='submit'>Delete</button></td>
                       </tr>
                     {{/each}}
                     </tbody>
