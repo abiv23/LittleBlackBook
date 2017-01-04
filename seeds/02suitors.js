@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
                 age: '18',
                 where_met: '7-11',
                 rating: '8',
-                image_url: 'https: //postimg.org/image/r643tbya7/'
+                image_url: 'https://s27.postimg.org/sl5oi1zdf/Screen_Shot_2017_01_03_at_8_14_19_PM.png'
             }, {
                 id: 2,
                 profile_id: 3,
@@ -17,7 +17,7 @@ exports.seed = function(knex, Promise) {
                 age: '24',
                 where_met: 'Grinder',
                 rating: '8',
-                image_url: 'https: //postimg.org/image/r4u5zwwgf/'
+                image_url: 'https://s27.postimg.org/3qm6nzej7/Screen_Shot_2017_01_03_at_8_14_42_PM.png'
             }, {
                 id: 3,
                 profile_id: 2,
@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
                 age: '33',
                 where_met: 'Broncos Game',
                 rating: '7',
-                image_url: 'https: //postimg.org/image/t30txwoy7/'
+                image_url: 'https://s27.postimg.org/4za29m6hf/Screen_Shot_2017_01_03_at_8_24_57_PM.png'
             }, {
                 id: 4,
                 profile_id: 4,
@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
                 age: '28',
                 where_met: 'Brunch with Friends',
                 rating: '10',
-                image_url: 'https: //postimg.org/image/ndfzzute7/'
+                image_url: 'https://s27.postimg.org/3vlcjwwgj/Screen_Shot_2017_01_03_at_8_27_04_PM.png'
             }]
             return knex('suitor').insert(suitors);
         });
