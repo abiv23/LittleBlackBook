@@ -46,6 +46,11 @@ nav .input-field input {
   margin-left: 1em;
 }
 
+.profile-header {
+  display:flex;
+  align-items:center;
+}
+
 .right-nav {
   display:flex;
   justify-content: space-around;
@@ -55,7 +60,10 @@ nav .input-field input {
   margin-left: 1em;
 }
 
-
+.row .col .btn {
+  width:100%;
+  margin-bottom:1em;
+}
 /* main content index styling */
 
 .leftside {
