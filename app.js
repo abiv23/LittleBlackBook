@@ -4,12 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override');
 var index = require('./routes/index');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/profile', profile);
 app.use('/login', login);
