@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
         table.integer('age');
         table.text('where_met');
         table.integer('rating');
+        table.text('img_url');
     })
 };
 
