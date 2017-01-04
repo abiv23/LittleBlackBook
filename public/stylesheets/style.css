@@ -54,4 +54,12 @@ nav .input-field input {
   margin-left: 1em;
 }
 
+.row .col .btn {
+  width:100%;
+  margin-bottom:1em;
+}
+
+.outline-me {
+  border: red 1px solid;
+}
 /* main content styling */

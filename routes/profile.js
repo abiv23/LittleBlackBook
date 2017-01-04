@@ -3,7 +3,10 @@ var router = express.Router();
 var knex = require('../db/knex.js');
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {
-  res.render('profile');
+  knex('profile').where('id', req.params.id).first().then(data=>{
+    res.render('profile', {data});
+  })
+
 });
 
 router.delete('/:id/delete', function(req,res,next) {
