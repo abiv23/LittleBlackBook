@@ -7,7 +7,6 @@ router.post('/', (req, res, next) => {
         profile.checkIfProfileExisits(req.body)
             .then((result) => {
                 if (result === undefined) {
-                    console.log(req.body);
                     req.body.password = protect.encrypt(req.body.password)
                         .then((data) => {
                             const newProfile = {
@@ -20,10 +19,8 @@ router.post('/', (req, res, next) => {
                         });
                 }
             }).then((data) => {
-                console.log(data);
                 res.send('Success')
             }).catch(error => {
-                console.log(error);
             });
 
     } else {
