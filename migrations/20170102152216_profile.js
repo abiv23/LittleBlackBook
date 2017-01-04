@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
         table.text('first_name').notNullable();
         table.text('last_name').notNullable();
         table.boolean('is_admin').defaultTo('false');
-        table.text('img_url');
+        table.text('image_url');
     })
 };
 
