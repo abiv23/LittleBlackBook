@@ -41,6 +41,7 @@ nav .input-field input {
   margin-left: .5em;
 }
 
+/* Profile Page */
 .pass-field {
   margin-left: 1em;
 }
@@ -54,17 +55,17 @@ nav .input-field input {
   margin-left: 1em;
 }
 
-.row .col .btn {
-  width:100%;
-  margin-bottom:1em;
+
+/* main content index styling */
+
+.leftside {
+  margin-top: 6em;
 }
 
-.outline-me {
-  border: red 1px solid;
+.explanations {
+  margin-top: 2em;
 }
 
-.profile-header {
-  display: flex;
-  align-items: center;
+.explanation {
+  margin-top: 2em;
 }
-/* main content styling */
