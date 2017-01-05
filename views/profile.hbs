@@ -1,43 +1,43 @@
 <div class="container">
     <div class="row profile-header">
-      <div class="col s12 m9">
         <h3>Edit my profile</h3>
-        <h3>{{title}}</h3>
-      </div>
-      <div class="col s12 m3">
-        <button class="btn red" type="submit" name="submit">Delete Account</button>
-      </div>
     </div>
         <hr>
         <div class="row">
-            <div class="col s12 m3 outline-me">
+            <div class="col s12 m3">
                 <img class="circle responsive-img" src="{{data.image_url}}" alt="">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
+                <form class="" action="{{data.id}}/delete" method="post">
+                  <button class="btn red">Delete Account</button>
+                </form>
             </div>
             <div class="col s12 m9">
-                <form class="" action="" method="post">
+                <form class="user-info" action="{{data.id}}/update" method="post">
                     <div class="input-field col s6">
-                        <input value="{{data.first_name}}" id="first_name" type="text">
+                      <label for="first_name">First Name</label>
+                      <input value="{{data.first_name}}" name="first_name" id="first_name" type="text">
                     </div>
                     <div class="input-field col s6">
-                        <input value="{{data.last_name}}" id="last_name" type="text">
+                      <label for="last_name">Last Name</label>
+                      <input value="{{data.last_name}}" name="last_name" id="last_name" type="text">
                     </div>
                     <div class="input-field col s12">
-                        <input value="{{data.email}}" id="email" type="text">
+                      <label for="email">E-mail Address</label>
+                      <input value="{{data.email}}" name="email" id="email" type="text">
                     </div>
-                    <div class="col s6">Update Password
+                    <div class="col s6 center hidden">Update Password
                         <div class="input-field col s12">
-                            <input placeholder= "Old Password" value="" id="current_password" type="password">
+                            <input name="password" placeholder= "Old Password" value="" id="current_password" type="password">
                         </div>
                         <div class="input-field col s12">
-                          <input placeholder= "New Password" value="" id="new_password" type="password">
+                          <input name="" placeholder= "New Password" value="" id="new_password" type="password">
                         </div>
                         <div class="input-field col s12">
-                            <input placeholder= "Retype New Password" value="" id="retype_new_password" type="password">
+                            <input name="" placeholder= "Retype New Password" value="" id="retype_new_password" type="password">
                         </div>
                     </div>
-                    <button class="btn red" type="cancel" name="cancel">Cancel</button>
-                    <button class="btn green" type="submit" name="submit">Save</button>
+                    <button class="btn red" type="reset" name="cancel">Cancel</button>
+                    <button class="btn green" type="submit">Save</button>
                 </form>
             </div>
         </div>
