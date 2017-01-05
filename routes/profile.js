@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex.js');
 var protect = require('../db/encryption.js');
-
+var auth = require('../auth/auth.js')
 /* GET users listing. */
-router.get('/:id', function(req, res, next) {
+router.get('/:id', auth.allowAccess, function(req, res, next) {
+  console.log(req.params)
   knex('profile').where('id', req.params.id).first().then(data=>{
     res.render('profile', {data});
   })

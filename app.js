@@ -28,7 +28,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', index);
-app.use('/profile',([auth.ensureLoggedIn, auth.allowAccess]), profile);
+app.use('/profile',auth.ensureLoggedIn,profile);
 app.use('/suitor', suitor);
 app.use('/login', login);
 app.use('/admin', auth.onlyAdmin, admin);
