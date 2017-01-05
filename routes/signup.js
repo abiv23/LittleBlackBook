@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var profile = require('../db/profile.js');
 var protect = require('../db/encryption.js')
+
 router.post('/', (req, res, next) => {
     if (validUser(req.body)) {
         profile.checkIfProfileExisits(req.body)
@@ -20,8 +21,7 @@ router.post('/', (req, res, next) => {
                 }
             }).then((data) => {
                 res.send('Success')
-            }).catch(error => {
-            });
+            }).catch(error => {});
 
     } else {
         next(new Error('Invalid User Credentials'))
