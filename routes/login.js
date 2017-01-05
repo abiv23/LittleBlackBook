@@ -19,13 +19,18 @@ router.post('/', function(req, res, next) {
     knex.select().table('profile').where('email', profile.email).first()
         .then(data => {
             protect.decrypt(data.password, profile.password).then(result =>{
-              console.log(result);
               if (result) {
                 if (data.is_admin === true){
-                  // res.cookie('')
                   res.redirect('admin');
                 } else {
-                  res.render('profile')
+                  console.log(data.id);
+                  const isSecure = req.app.get('env'!= 'development')
+                  res.cookie('user_id', data.id, {
+                    httpOnly: true,
+                    signed: true,
+                    secure: isSecure
+                  });
+                  res.redirect(`/profile/${data.id}`);
                 }
               };
         })
