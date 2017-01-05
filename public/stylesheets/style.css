@@ -63,6 +63,7 @@ nav .input-field input {
 .row .col .btn {
   width:100%;
   margin-bottom:1em;
+  margin-top: 1em;
 }
 /* main content index styling */
 
@@ -80,4 +81,11 @@ nav .input-field input {
 
 label.active {
   color:#000;
+}
+
+/* sos */
+
+.sos {
+  height: auto;
+  width: 100%;
 }
