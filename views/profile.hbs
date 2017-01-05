@@ -7,10 +7,9 @@
             <div class="col s12 m3">
                 <img class="circle responsive-img" src="{{data.image_url}}" alt="">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
-                <form action='profile/{{this.id}}/delete?_method=delete' method='post'>
+                <form action='{{data.id}}/delete?_method=delete' method='post'>
                   <button class="btn red">Delete Account</button>
                 </form>
-
             </div>
             <div class="col s12 m9">
                 <form class="user-info" action="{{data.id}}/update" method="post">
