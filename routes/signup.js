@@ -17,6 +17,12 @@ router.post('/', (req, res, next) => {
                                 password: data
                             };
                             profile.storeNewProfile(newProfile).then(id => {
+                              const isSecure = req.app.get('env'!= 'development')
+                              res.cookie('user_id', id, {
+                                httpOnly: true,
+                                signed: true,
+                                secure: isSecure
+                              });
                                 res.redirect(`/profile/${id}`)
                             })
                         });
