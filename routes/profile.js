@@ -66,10 +66,16 @@ router.post('/:id/update', function(req, res, next){
   });
 });
 
-router.delete('/:id/delete', function(req,res,next) {
-  knex('profile').where('id', req.params.id).first().del().then(data=>{
-    res.redirect('/');
-  });
+// router.delete('/:id/delete', function(req,res,next) {
+//   knex('profile').where('id', req.params.id).first().del().then(data=>{
+//     res.redirect('/');
+//   });
+// });
+
+router.delete('/:id/delete', function(req, res, next) {
+   knex('profile').where('id', req.params.id).first().del().then(data => {
+       res.redirect('/admin');
+   });
 });
 
 module.exports = router;

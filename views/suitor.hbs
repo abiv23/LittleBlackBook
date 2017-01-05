@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row contact-header">
+        <div class="col s12 m9">
+            <h3>{{data.name}}</h3>
+        </div>
+        <div class="col s12 m3">
+            <button class="btn red" type="submit" name="submit">Plan A Date</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col s12 m3 outline-me">
+            <img class="circle responsive-img" src="{{data.image_url}}" alt="">
+            <div class="input-field col s12">{{data.rating}}
+            </div>
+            <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
+        </div>
+        <div class="col s12 m9">
+            <form class="" action="" method="post">
+                <div class="input-field col s6">
+                    <input value="{{data.name}}" id="name" type="text">
+                </div>
+                <div class="input-field col s6">
+                    <input value="{{data.age}}" id="age" type="text">
+                </div>
+                <div class="input-field col s12">
+                    <input value="{{data.where_met}}" id="email" type="text">
+                </div>
+                <button class="btn red" type="cancel" name="cancel">Cancel</button>
+                <button class="btn green" type="submit" name="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
