@@ -32,10 +32,7 @@ router.post('/', (req, res, next) => {
                         });
                 }
             }).then((data) => {
-                res.render('/admin', {
-                    data,
-                    layout: false
-                })
+                res.redirect('/admin')
             }).catch(error => {});
 
     } else {

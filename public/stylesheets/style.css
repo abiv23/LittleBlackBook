@@ -82,3 +82,10 @@ nav .input-field input {
 label.active {
   color:#000;
 }
+
+/* sos */
+
+.sos {
+  height: auto;
+  width: 100%;
+}

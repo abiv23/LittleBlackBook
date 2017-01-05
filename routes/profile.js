@@ -5,9 +5,11 @@ var protect = require('../db/encryption.js');
 
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {
-  knex('profile').where('id', req.params.id).first().then(data=>{
-    res.render('profile', {data});
-  })
+    knex('profile').where('id', req.params.id).first().then(data => {
+        res.render('profile', {
+            data
+        });
+    })
 
 });
 
