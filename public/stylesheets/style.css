@@ -42,6 +42,15 @@ nav .input-field input {
 }
 
 /* Profile Page */
+#drop_down {
+  background-color:#FFF;
+  outline:2px solid black;
+}
+
+.change-photo {
+  background-color:blue;
+}
+
 .pass-field {
   margin-left: 1em;
 }
