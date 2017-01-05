@@ -18,6 +18,7 @@ router.post('/:id/update', function(req, res, next){
     .then(data=>{
       protect.decrypt(data.password, profile.password).then(result=>{
         if (result){
+          console.log("password correct")
           if (profile.new_password === profile.new_password_verify){
             knex('profile').where('id', req.params.id).update({
               first_name: profile.first_name,
@@ -29,7 +30,7 @@ router.post('/:id/update', function(req, res, next){
             });
           }
         } else {
-          alert('old password incorrect');
+
         }
       });
     });
@@ -42,7 +43,7 @@ router.post('/:id/update', function(req, res, next){
   });
 })
 
-router.post('/:id/delete', function(req,res,next) {
+router.delete('/:id/delete', function(req,res,next) {
   knex('profile').where('id', req.params.id).first().del().then(data=>{
     res.redirect('/');
   });
