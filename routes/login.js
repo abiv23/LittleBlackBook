@@ -21,7 +21,14 @@ router.post('/', function(req, res, next) {
             protect.decrypt(data.password, profile.password).then(result =>{
               if (result) {
                 if (data.is_admin === true){
+                  const isSecure = req.app.get('env'!= 'development')
+                  res.cookie('is_admin', data.id, {
+                    httpOnly:true,
+                    signed: true,
+                    secure:isSecure
+                  })
                   res.redirect('admin');
+
                 } else {
                   console.log(data.id);
                   const isSecure = req.app.get('env'!= 'development')
@@ -32,7 +39,7 @@ router.post('/', function(req, res, next) {
                   });
                   res.redirect(`/profile/${data.id}`);
                 }
-              };
+              } else res.redirect('/');
         })
         })
 
