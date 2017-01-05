@@ -16,11 +16,19 @@ router.post('/', (req, res, next) => {
                                 email: req.body.email,
                                 password: data
                             };
-                            profile.storeNewProfile(newProfile);
+                            profile.storeNewProfile(newProfile).then(id => {
+                              const isSecure = req.app.get('env'!= 'development')
+                              res.cookie('user_id', id, {
+                                httpOnly: true,
+                                signed: true,
+                                secure: isSecure
+                              });
+                                res.redirect(`/profile/${id}`)
+                            })
                         });
+                } else {
+                  next(new Error('Profile Already Exists with that Email'))
                 }
-            }).then((data) => {
-                res.send('Success')
             }).catch(error => {});
 
     } else {
