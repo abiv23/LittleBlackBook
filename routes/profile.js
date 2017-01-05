@@ -14,6 +14,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 router.post('/:id/update', function(req, res, next) {
     let userPassword = protect.encrypt(req.body.password).then(data => {
         return data;
@@ -33,6 +34,8 @@ router.delete('/:id/delete', function(req, res, next) {
         res.redirect('/admin');
     });
 =======
+=======
+>>>>>>> 9c13a62c214cd336742eeac34166c387b6ccc041
 router.post('/:id/update', function(req, res, next){
   let profile = req.body;
   console.log(profile);
@@ -80,7 +83,10 @@ router.delete('/:id/delete', function(req, res, next) {
    knex('profile').where('id', req.params.id).first().del().then(data => {
        res.redirect('/admin');
    });
+<<<<<<< HEAD
 >>>>>>> f715b3deaba56d24f2bae76f269f77b93a3ea92f
+=======
+>>>>>>> 9c13a62c214cd336742eeac34166c387b6ccc041
 });
 
 module.exports = router;
