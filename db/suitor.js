@@ -15,10 +15,10 @@ module.exports = {
   //   }).into('suitor').returning('id').then((id)=>{});
   // },
 
-  getByUser: function(id){
-    return knex('suitor')
-    .where('profile_id', id);
-  }
+  // getByUser: function(id){
+  //   return knex('suitor')
+  //   .where('profile_id', id);
+  // }
 
 
 }
