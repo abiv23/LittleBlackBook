@@ -4,15 +4,15 @@
     </div>
         <hr>
         <div class="row">
-            <div class="col s12 m3 outline-me">
+            <div class="col s12 m3">
                 <img class="circle responsive-img" src="{{data.image_url}}" alt="">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
                 <form class="" action="{{data.id}}/delete" method="post">
-                  <button class="btn red" type="submit" name="submit">Delete Account</button>
+                  <button class="btn red">Delete Account</button>
                 </form>
             </div>
             <div class="col s12 m9">
-                <form class="user-info" action="" method="post">
+                <form class="user-info" action="{{data.id}}/update" method="post">
                     <div class="input-field col s6">
                       <label for="first_name">First Name</label>
                       <input value="{{data.first_name}}" name="first_name" id="first_name" type="text">
@@ -27,17 +27,17 @@
                     </div>
                     <div class="col s6 center hidden">Update Password
                         <div class="input-field col s12">
-                            <input placeholder= "Old Password" value="" id="current_password" type="password">
+                            <input name="password" placeholder= "Old Password" value="" id="current_password" type="password">
                         </div>
                         <div class="input-field col s12">
-                          <input placeholder= "New Password" value="" id="new_password" type="password">
+                          <input name="" placeholder= "New Password" value="" id="new_password" type="password">
                         </div>
                         <div class="input-field col s12">
-                            <input placeholder= "Retype New Password" value="" id="retype_new_password" type="password">
+                            <input name="" placeholder= "Retype New Password" value="" id="retype_new_password" type="password">
                         </div>
                     </div>
                     <button class="btn red" type="reset" name="cancel">Cancel</button>
-                    <button class="btn green" type="submit" name="submit">Save</button>
+                    <button class="btn green" type="submit">Save</button>
                 </form>
             </div>
         </div>
