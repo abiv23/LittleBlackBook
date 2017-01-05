@@ -11,7 +11,6 @@ var suitor = require('./routes/suitor');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
 var signup = require('./routes/signup');
-var auth = require('./auth/auth.js');
 var app = express();
 
 
@@ -28,10 +27,10 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', index);
-app.use('/profile',auth.ensureLoggedIn,profile);
+app.use('/profile', profile);
 app.use('/suitor', suitor);
 app.use('/login', login);
-app.use('/admin', auth.onlyAdmin, admin);
+app.use('/admin', admin);
 app.use('/signup', signup);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
