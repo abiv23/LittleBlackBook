@@ -12,7 +12,7 @@ module.exports = {
       password: newProfile.password,
       first_name: newProfile.first_name,
       last_name: newProfile.last_name
-    }).into('profile').returning('id').then((id)=>{});
+    }).into('profile').returning('id').then((id)=>{return id;});
   }
 
 
