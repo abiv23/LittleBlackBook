@@ -50,6 +50,31 @@
                     {{/each}}
                     </tbody>
                   </table>
+                  <h3>Create a new User</h3>
+                  <form method='post' action='/signup'>
+                      <div class='col s6'>
+                        <label for='first_name'>First Name</label>
+                        <input name='first_name' class='validate' type='text' required />
+                      </div>
+                      <div class='col s6'>
+                        <label for='last_name'>Last Name</label>
+                        <input name='last_name' class='validate' type='text' required />
+                      </div>
+                      <div class='col s12'>
+                        <label for='email'>Email</label>
+                        <input name='email' class='validate' type='email' required />
+                      </div>
+                      <div class='col s12'>
+                        <label for='password'>Password</label>
+                        <input name='password' class='validate' type='password' required />
+                      </div>
+                      <div class='col s12'>
+                        <label for="image_url">Image Url</label>
+                        <input name='image_url' class='validate' type='text' required />
+                      <div class='col s12'>
+                        <button type='submit' class='btn btn-success'>Submit</button>
+                      </div>
+                  </form>
                 </div>
     </main>
     <footer>
