@@ -11,6 +11,9 @@ exports.seed = function(knex, Promise) {
                 suitor_id: '2',
                 interest_id: '1'
             }, {
+                suitor_id: '2',
+                interest_id: '2'
+            }, {
                 suitor_id: '3',
                 interest_id: '1'
             }, {

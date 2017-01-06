@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
                 image_url: 'https://s27.postimg.org/4za29m6hf/Screen_Shot_2017_01_03_at_8_24_57_PM.png'
             }, {
                 id: 4,
-                profile_id: 4,
+                profile_id: 2,
                 name: 'Karen',
                 age: '28',
                 where_met: 'Brunch with Friends',
