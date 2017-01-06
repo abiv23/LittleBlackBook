@@ -1,15 +1,11 @@
-<h1> PLAN THE DATE</h1>
-
-{{#each data}}
-
-  <div class="carousel-item">
-    <div class="carousel-fixed-item center">
-      <h4>{{this.name}}</h4>
-      <h6>{{this.where_met}}</h6>
-      <span class="stars center">{{this.rating}}</span>
-    </div>
-    <img class="circle responsive-img" src="{{this.image_url}}">
-
-  </div>
-
-{{/each}}
+<div class='container'>
+    <h4 class='center-align'> Plan Your Next Date</h1>
+    <form>
+      <select>
+      {{#each data}}
+      <option value='{{this.id}}'>{{this.name}}</option>}
+      {{/each}}
+    </select>
+    <input type='text' />
+    </form>
+</div>

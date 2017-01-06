@@ -9,8 +9,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/:id', auth.allowAccess, function(req,res,next) {
     knex('suitor').where('profile_id', req.params.id).then(data=>{
+      data.profile_id = req.params.id
       console.log(data);
       res.render('plan_date', {data});
     });
 });
+
+router.post('/', function(req,res,next){
+  console.log(req.body);
+})
 module.exports = router;
