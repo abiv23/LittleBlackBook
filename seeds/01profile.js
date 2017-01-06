@@ -31,6 +31,15 @@ exports.seed = function(knex, Promise) {
                 last_name: 'Love',
                 is_admin: true,
                 image_url: 'https://s27.postimg.org/aq08ncehf/Screen_Shot_2017_01_03_at_8_18_07_PM.png'
+            },
+            {
+                id: 5,
+                email: 'admin@admin.com',
+                password: '$2a$10$Ytv5sQ.Xhw4dJMgtWRuFNuqqeqicXfuOvNtLTDZqG1LFQgDRanogK',
+                first_name: 'Admin',
+                last_name: 'Admin',
+                is_admin: true,
+                image_url: 'https://s27.postimg.org/aq08ncehf/Screen_Shot_2017_01_03_at_8_18_07_PM.png'
             }]
             return knex('profile').insert(profiles);
         });

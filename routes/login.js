@@ -7,7 +7,7 @@ var protect = require('../db/encryption.js');
 
 
 router.get('/', function(req, res, next) {
-    protect.encrypt(req.query.password).then(hash => {});
+    protect.encrypt(req.query.password).then(hash => {res.send(hash)});
 
 
 });
