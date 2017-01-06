@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex.js');
 var suitor = require('../db/suitor.js');
-var auth = require('../auth/auth.js');
 
+var auth = require('../auth/auth.js');
 
 
 /* GET users listing. */
@@ -11,17 +11,17 @@ var auth = require('../auth/auth.js');
 router.get('/:id', function(req, res, next) {
     knex('suitor').where('id', req.params.id).first().then(suitor => {
         suitor.interests = [];
-        suitor.allInterests= [];
+        suitor.allInterests = [];
         knex.select('*').from('interest').then(allInterests => {
-          // let allInterest = {
-          //     id: allInterests[0].id,
-          //     name: allInterests[0].interest_name
-          // };
-          suitor.allInterests.push(allInterests);
-          console.log(suitor.allInterests[0][1].interest_name);
-          // console.log(suitor.allInterests.interest_name);
+            // let allInterest = {
+            //     id: allInterests[0].id,
+            //     name: allInterests[0].interest_name
+            // };
+            suitor.allInterests.push(allInterests);
+            console.log(suitor.allInterests[0][1].interest_name);
+            // console.log(suitor.allInterests.interest_name);
         }).then(
-        knex('suitor_interest')
+            knex('suitor_interest')
             .where('suitor_id', req.params.id)
             .then(suitor_interests => {
                 let interests = suitor_interests.map((item) => {
@@ -36,18 +36,18 @@ router.get('/:id', function(req, res, next) {
                 })
                 return Promise.all(interests)
             }).then(info => {
-                for (var j = 0; j<suitor.interests.length; j++){
-                  for (var i = 0; i<suitor.allInterests[0].length; i++){
-                    if (suitor.allInterests[0][i].id == suitor.interests[j].id) {
-                      suitor.allInterests[0][i].interest_active = 1;
+                for (var j = 0; j < suitor.interests.length; j++) {
+                    for (var i = 0; i < suitor.allInterests[0].length; i++) {
+                        if (suitor.allInterests[0][i].id == suitor.interests[j].id) {
+                            suitor.allInterests[0][i].interest_active = 1;
+                        }
                     }
-                  }
                 }
                 res.render('suitor', {
                     data: suitor
                 })
             })
-          )
+        )
     });
 });
 

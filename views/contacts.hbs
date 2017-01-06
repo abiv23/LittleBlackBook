@@ -6,7 +6,6 @@
     <div class="carousel">
 
       {{#each data}}
-
         <div class="carousel-item">
           <div class="carousel-fixed-item center">
             <h4>{{this.name}}</h4>
@@ -21,4 +20,8 @@
 
       {{/each}}
     </div>
+    <button class="btn blue" id="add_suitor"type="submit" name="add_suitor">Add New Contact</button>
+    <form class="hidden_form" action="{{user.id}}/addnew" method="post">
+
+    </form>
 </div>
