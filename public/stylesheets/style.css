@@ -74,6 +74,26 @@ nav .input-field input {
   margin-bottom:1em;
   margin-top: 1em;
 }
+
+/* Contacts page */
+
+.carousel {
+  width:100%;
+  margin:auto;
+}
+.carousel .carousel-item {
+  width:20vw;
+  height:50vh;
+}
+
+.carousel-item h6 {
+  text-transform:uppercase;
+}
+
+.carousel-item .responsive-img {
+  
+}
+
 /* main content index styling */
 
 .leftside {

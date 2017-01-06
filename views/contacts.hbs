@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row profile-header">
+        <h3>My Suitors</h3>
+    </div>
+    <hr>
+    <div class="carousel">
+
+      {{#each data}}
+
+      <div class="carousel-item">
+        <div class="carousel-fixed-item center">
+          <h4>{{this.name}}</h4>
+          <h6>{{this.where_met}}</h6>
+          <h6>{{this.rating}}/10</h6>
+        </div>
+        <a href="/contacts/{{this.profile_id}}/{{this.id}}">
+        <img class="circle responsive-img" src="{{this.image_url}}">
+        </a>
+
+      </div>
+
+      {{/each}}
+    </div>
+</div>

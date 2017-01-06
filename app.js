@@ -10,8 +10,9 @@ var profile = require('./routes/profile');
 var suitor = require('./routes/suitor');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
+var contacts = require('./routes/contacts');
 var signup = require('./routes/signup');
-var toolkit = require('./routes/toolkit')
+var toolkit = require('./routes/toolkit');
 var app = express();
 
 
@@ -35,6 +36,7 @@ app.use('/suitor', suitor);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/signup', signup);
+app.use('/contacts', contacts)
 app.use('/toolkit', toolkit);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
