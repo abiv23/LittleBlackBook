@@ -38,7 +38,7 @@ router.get('/their/:suitor_id', (req, res) => {
         .then((suitor_interest) => {
             console.log(suitor_interest);
             res.render('toolkit-their-interests', {
-                interest: 'this is working'
+                suitor_interest
             });
         });
 })
