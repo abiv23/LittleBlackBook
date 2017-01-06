@@ -5,6 +5,7 @@ var protect = require('../db/encryption.js');
 var auth = require('../auth/auth.js');
 /* GET users listing. */
 
+
 router.get('/', function(req, res, next) {
     res.redirect(`/profile/${req.signedCookies.user_id}`)
 });

@@ -3,8 +3,8 @@ var router = express.Router();
 var knex = require('../db/knex.js');
 
 router.get('/', function(req,res,next){
-  res.redirect(`/${req.signedCookie.user_id}`)
-})
+  res.redirect(`/contacts/${req.signedCookies.user_id}`)
+});
 
 router.get('/:id', function(req, res, next) {
   knex('suitor').where('profile_id', req.params.id).then(data=>{
