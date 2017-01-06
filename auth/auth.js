@@ -1,3 +1,5 @@
+const knex = require('../db/knex');
+
 function ensureLoggedIn(req,res,next) {
   console.log(req.signedCookies);
   if(req.signedCookies.user_id){
@@ -37,10 +39,23 @@ function logOut(req,res,next) {
   res.clearCookie('is_admin');
   next();
 }
+
+function setUser(req, res, next){
+  if (req.signedCookies.user_id){
+    knex('profile').where('id', req.signedCookies.user_id).first().then(user=>{
+      res.locals.user = user;
+      next();
+    })
+  }else {
+    next()
+  }
+}
+
 module.exports = {
   ensureLoggedIn,
   allowAccess,
   adminOnly,
   logOut,
-  loggedInRedirect
+  loggedInRedirect,
+  setUser
 };
