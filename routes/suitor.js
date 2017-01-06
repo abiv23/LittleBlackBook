@@ -4,6 +4,7 @@ var knex = require('../db/knex.js');
 var suitor = require('../db/suitor.js');
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {
+<<<<<<< HEAD
     knex('suitor').where('id', req.params.id).first().then(suitor => {
         suitor.interests = [];
         suitor.allInterests= [];
@@ -44,6 +45,14 @@ router.get('/:id', function(req, res, next) {
             })
           )
     });
+=======
+    knex('suitor').where('id', req.params.id).first().then(data => {
+        res.render('suitor', {
+            data
+        });
+    })
+
+>>>>>>> toolkit
 });
 
 router.delete('/:id/delete', function(req, res, next) {
@@ -52,6 +61,7 @@ router.delete('/:id/delete', function(req, res, next) {
     });
 });
 
+<<<<<<< HEAD
 // router.get('/:id/suitor', (req,res) => {
 //   if(!isNaN(req.params.id)) {
 //     Suitor.getByUser(req.params.id)
@@ -65,5 +75,12 @@ router.delete('/:id/delete', function(req, res, next) {
 //     });
 //   }
 // });
+=======
+router.get('/:id/suitor', (req, res) => {
+    if (!isNaN(req.params.id)) {
+
+    }
+});
+>>>>>>> toolkit
 
 module.exports = router;
