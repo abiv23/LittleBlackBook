@@ -143,3 +143,9 @@ label.active {
   height: auto;
   width: 100%;
 }
+
+/* their interests */
+
+.interest {
+  margin-top: 10vh;
+}
