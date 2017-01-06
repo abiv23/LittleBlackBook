@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex.js');
 var protect = require('../db/encryption.js');
-
+var auth = require('../auth/auth.js');
 /* GET users listing. */
-router.get('/:id', function(req, res, next) {
+router.get('/:id', auth.allowAccess, function(req, res, next) {
   knex('profile').where('id', req.params.id).first().then(data=>{
     res.render('profile', {data});
   })
@@ -13,7 +13,7 @@ router.get('/:id', function(req, res, next) {
 
 
 
-router.post('/:id/update', function(req, res, next){
+router.post('/:id/update', auth.allowAccess, function(req, res, next){
   let profile = req.body;
   console.log(profile);
   if (profile.password.length>0){
@@ -56,7 +56,7 @@ router.post('/:id/update', function(req, res, next){
 
 });
 
-router.post('/:id/updatePhoto', function(req, res, next){
+router.post('/:id/updatePhoto', auth.allowAccess, function(req, res, next){
   console.log(req.body.photo_url)
   knex('profile').where('id', req.params.id).update({
     image_url: req.body.photo_url
@@ -66,7 +66,7 @@ router.post('/:id/updatePhoto', function(req, res, next){
 
 });
 
-router.delete('/:id/delete', function(req, res, next) {
+router.delete('/:id/delete', auth.allowAccess,function(req, res, next) {
    knex('profile').where('id', req.params.id).first().del().then(data => {
        res.redirect('/');
    });
