@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex.js');
 var suitor = require('../db/suitor.js');
+
 /* GET users listing. */
 router.get('/:id', function(req, res, next) {
     knex('suitor').where('id', req.params.id).first().then(suitor => {
