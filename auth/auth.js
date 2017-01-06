@@ -8,6 +8,12 @@ function ensureLoggedIn(req,res,next) {
   }
 }
 
+function loggedInRedirect(req,res,next) {
+  if(req.signedCookies.user_id) {
+    res.redirect(`/contacts/${req.signedCookies.user_id}`);
+  } else next();
+}
+
 function adminOnly (req,res,next) {
   if(req.signedCookies.is_admin) {
     next();
@@ -35,5 +41,6 @@ module.exports = {
   ensureLoggedIn,
   allowAccess,
   adminOnly,
-  logOut
+  logOut,
+  loggedInRedirect
 };
