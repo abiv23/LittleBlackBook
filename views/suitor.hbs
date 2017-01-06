@@ -9,23 +9,28 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col s12 m3 outline-me">
-            <img class="circle responsive-img" src="{{data.image_url}}" alt="">
-            <div class="input-field col s12">{{data.rating}}
+        <!-- <form class="suitor-info" action="{{data.id}}/update" method="post"> -->
+          <form class="" action="" method="">
+
+            <div class="col s12 m3 outline-me">
+                <img class="circle responsive-img" src="{{data.image_url}}" alt="">
+                <div class="input-field col s12">{{data.rating}}
+                </div>
+                <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
             </div>
-            <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
-        </div>
-        <div class="col s12 m9">
-            <form class="" action="" method="post">
+            <div class="col s12 m9">
+
                 <div class="input-field col s6">
-                    <input value="{{data.name}}" id="name" type="text">
+                    <input value="{{data.name}}" id="name" name="name" type="text">
                 </div>
                 <div class="input-field col s6">
-                    <input value="{{data.age}}" id="age" type="text">
+                    <input value="{{data.age}}" id="age" name="age" type="text">
                 </div>
                 <div class="input-field col s12">
-                    <input value="{{data.where_met}}" id="email" type="text">
+                    <input value="{{data.where_met}}" id="where_met" name="where_met" type="text">
                 </div>
+
+
                 <div class="row">
                     <div class="col s2">
                         <form action="#">
@@ -33,12 +38,12 @@
                                 {{#each this}}
                                     {{#if this.interest_active }}
                                         <p>
-                                            <input type="checkbox" class="filled-in" id="{{ this.id }}" value="1" checked/>
+                                            <input type="checkbox" class="filled-in" id="{{ this.id }}" name="suitor_interests" value="{{ this.id }}" checked/>
                                             <label for="{{ this.id }}">{{ this.interest_name }}</label>
                                         </p>
                                     {{else}}
                                         <p>
-                                            <input type="checkbox" class="filled-in" id="{{ this.id }}" value="0" />
+                                            <input type="checkbox" class="filled-in" id="{{ this.id }}" name="suitor_interests" value="{{ this.id }}" />
                                             <label for="{{ this.id }}">{{ this.interest_name }}</label>
                                         </p>
                                     {{/if}}
@@ -50,9 +55,13 @@
                     </div>
                 </div>
                 <button class="btn red" type="cancel" name="cancel">Cancel</button>
-                <button class="btn green" type="submit" name="submit">Save</button>
-            </form>
-        </div>
+                <button class="btn green" type="submit">Save</button>
+                <!-- </form> -->
+                <!-- <button class="btn red" type="cancel" name="cancel">Cancel</button>
+                <button class="btn green" type="submit">Save</button> -->
+            </div>
+        </form>
+
     </div>
 </div>
 </div>
