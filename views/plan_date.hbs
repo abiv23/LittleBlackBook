@@ -1,1 +1,15 @@
 <h1> PLAN THE DATE</h1>
+
+{{#each data}}
+
+  <div class="carousel-item">
+    <div class="carousel-fixed-item center">
+      <h4>{{this.name}}</h4>
+      <h6>{{this.where_met}}</h6>
+      <span class="stars center">{{this.rating}}</span>
+    </div>
+    <img class="circle responsive-img" src="{{this.image_url}}">
+
+  </div>
+
+{{/each}}
