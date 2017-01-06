@@ -68,7 +68,8 @@ router.post('/:id/updatePhoto', auth.allowAccess, function(req, res, next){
 
 router.delete('/:id/delete', auth.allowAccess,function(req, res, next) {
    knex('profile').where('id', req.params.id).first().del().then(data => {
-       res.redirect('/');
+      res.clearCookie('user_id');
+      res.redirect('/');
    });
 });
 

@@ -9,4 +9,11 @@ router.get('/:id', function(req, res, next) {
   })
 });
 
+router.get('/:id/suitor/:suitor_id', function(req, res, next) {
+  knex('suitor').where('id', req.params.suitor_id).then(data=>{
+    res.render('contacts', {data});
+  })
+});
+
+
 module.exports = router;
