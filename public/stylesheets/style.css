@@ -115,6 +115,10 @@ span.stars span {
 
 }
 
+.hidden_form {
+  display:none;
+}
+
 /* main content index styling */
 
 .leftside {

@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.carousel').carousel();
 
     // vvv STAR RATING vvv
-    
+
     $.fn.stars = function() {
     return $(this).each(function() {
         var val = parseFloat($(this).html());
@@ -15,4 +15,41 @@ $(document).ready(function() {
     $(function() {
       $('span.stars').stars();
     });
+
+    // HIDDEN FORM FOR ADDING NEW SUITOR //
+
+    $('.hidden_form').append(
+            `
+      <h4>Add New Contact</h4>
+      <div class="row">
+      <div class="input-field col s6">
+        <input id="name" type="text" class="validate" placeholder="Name" name="name">
+      </div>
+      <div class="input-field col s6">
+        <input id="age" type="text" class="validate" placeholder="Age" name="age">
+      </div>
+      </div>
+      <div class="row">
+      <div class="input-field col s6">
+        <input id="where met" type="text" class="validate" placeholder="Where you met?" name="where_met">
+      </div>
+      <div class="input-field col s6">
+        <input id="rating" type="text" class="validate" placeholder="Rating (1-10)" name="rating">
+      </div>
+      </div>
+      <div class="input-field col s6">
+        <input id="image URL" type="text" class="validate" placeholder="paste image URL here" name="image_url">
+      </div>
+      <div class="crud-buttons">
+        <button class="btn green waves-effect waves-light" id="add-suitor" type="submit">Submit</button>
+      </div>
+      `
+        );
+
+    $('#add_suitor').on('click',(function(){
+      $("html, body").animate({
+            scrollTop: $(document).height()
+        }, "slow");
+        $('.hidden_form').fadeIn(1600);
+    }));
 });
