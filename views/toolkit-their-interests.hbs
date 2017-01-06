@@ -1,3 +1,9 @@
-<h3>Your Date is Interested In:</h3>
-<h1>{{interest}}</h1>
-<form action="/common" method="get"><button type="submit" class="btn">More of their Interests</button></form>
+<div class="container">
+    <div class="row center-align interest">
+      <h3>Talk to your Date about:</h3>
+  {{#each suitor_interest}}
+    <h1>{{interest_name}}</h1>
+  {{/each}}
+    <a href="/toolkit" class="center-align"><button class="btn">Back</button></a>
+    </div>
+</div>
