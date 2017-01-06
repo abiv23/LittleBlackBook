@@ -24,7 +24,7 @@ function adminOnly (req,res,next) {
 }
 
 function allowAccess(req,res,next) {
-  if((req.signedCookies.user_id  == req.params.id)||req.signedCookies.isAdmin){
+  if((req.signedCookies.user_id  == req.params.id)|| req.signedCookies.is_admin){
     next();
   } else {
     res.status(401);

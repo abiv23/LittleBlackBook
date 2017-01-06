@@ -82,6 +82,9 @@ nav .input-field input {
   padding:0px;
 }
 
+.row .col .logoutbutton {
+  margin-left: 1em;
+}
 /* Contacts page */
 
 span.stars, span.stars span {
