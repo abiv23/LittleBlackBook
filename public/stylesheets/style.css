@@ -65,14 +65,21 @@ nav .input-field input {
   justify-content: space-around;
 }
 
-.row .col .m4 {
+.row .col .passwordinput {
   margin-left: 1em;
 }
+
 
 .row .col .btn {
   width:100%;
   margin-bottom:1em;
   margin-top: 1em;
+}
+
+.row .col .submitbutton {
+  width: 100%;
+  white-space: normal;
+  padding:0px;
 }
 
 /* Contacts page */
