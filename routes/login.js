@@ -27,7 +27,12 @@ router.post('/', function(req, res, next) {
                             httpOnly: true,
                             signed: true,
                             secure: isSecure
-                        })
+                        });
+                        res.cookie('user_id', data.id, {
+                            httpOnly: true,
+                            signed: true,
+                            secure: isSecure
+                        });
                         res.redirect('admin');
 
                     } else {
