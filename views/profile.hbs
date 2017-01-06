@@ -8,11 +8,17 @@
                 <img class="circle responsive-img" src="{{data.image_url}}" alt="">
                 <form class="" action="{{data.id}}/updatePhoto" method="post">
                   <input type="text" name="photo_url" placeholder="Enter image URL to change Photo">
-                  <button class="btn blue" type="submit">Change Photo!</button>
+                  <button class="btn blue" type="submit">Edit Photo!</button>
                 </form>
+                {{#if data.id}}
                 <form action='{{data.id}}/delete?_method=delete' method='post'>
                   <button class="btn red">Delete Account</button>
                 </form>
+                {{else}}
+                <form action='/' method='get'>
+                  <button class="btn red">Delete Account</button>
+                </form>
+                {{/if}}
 
             </div>
             <div class="col s12 m9">
