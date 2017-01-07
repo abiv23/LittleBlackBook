@@ -41,7 +41,8 @@ function logOut(req,res,next) {
 
 function setUser(req, res, next){
   if (req.signedCookies.user_id){
-    knex('profile').where('id', req.signedCookies.user_id).first().then(user=>{
+    let user_id = req.signedCookies.user_id[0]
+    knex('profile').where('id', user_id).first().then(user=>{
       res.locals.user = user;
       next();
     })

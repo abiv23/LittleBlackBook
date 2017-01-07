@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex.raw('DELETE FROM profile; ALTER SEQUENCE profile_id_seq RESTART WITH 5')
+    return knex.raw('DELETE FROM profile; ALTER SEQUENCE profile_id_seq RESTART WITH 6')
         .then(() => {
             const profiles = [{
                 id: 1,
