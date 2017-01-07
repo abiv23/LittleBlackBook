@@ -9,7 +9,20 @@
           <option value='{{this.id}}'>{{this.name}}</option>
           {{/each}}
         </select>
-        <button class='btn' type='submit'>Set Date</button>
+        <div class='row'>
+          <div class='col s9'>
+          <label for='location' required>Location</label>
+          <input type='text' name='location' required/>
+          </div>
+          <div class='col s3'>
+            <button class='btn waves-effect red darken-1'><i class="fa fa-yelp" aria-hidden="true"></i> Yelp</button>
+          </div>
+        </div>
+        <label for='date' >Date</label>
+        <input type='date' name='date' required/>
+        <label for='time'>Time</label>
+        <input type='time' name='time' required />
+        <button class='btn' type='submit' >Set Date</button>
     </form>
       </div>
       <div class='s6 col'>
