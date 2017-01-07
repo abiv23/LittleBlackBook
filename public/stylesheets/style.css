@@ -115,6 +115,10 @@ span.stars span {
 
 }
 
+.hidden_form {
+  display:none;
+}
+
 /* main content index styling */
 
 .leftside {
@@ -138,4 +142,10 @@ label.active {
 .sos {
   height: auto;
   width: 100%;
+}
+
+/* their interests */
+
+.interest {
+  margin-top: 10vh;
 }
