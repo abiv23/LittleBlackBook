@@ -65,10 +65,17 @@ nav .input-field input {
   justify-content: space-around;
 }
 
-.row .col .passwordinput {
-  margin-left: 1em;
+.row .col .emailinput {
+  font-size: 1.2em;
+  width: 7em;
 }
 
+.row .col .passwordinput {
+  margin-left: 1em;
+  font-size: 1.2em;
+  width: 5em;
+
+}
 
 .row .col .btn {
   width:100%;

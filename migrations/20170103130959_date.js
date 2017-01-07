@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
         table.time('time');
         table.text('location');
         table.integer('rating');
+        table.text('note');
     })
 };
 
