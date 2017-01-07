@@ -52,7 +52,7 @@ router.get('/:id', function(req, res, next) {
 
 router.post('/:id/update', auth.allowAccess, function(req, res, next) {
     // console.log("suitor_interests = "+req.body.suitor_interests);
-
+    console.log(req.body)
     // delete all suitor interests
     knex('suitor_interest')
         .where('suitor_id', req.params.id)
