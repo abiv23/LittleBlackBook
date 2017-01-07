@@ -22,8 +22,10 @@ router.get('/get_contact/:id', function(req,res,next){
 });
 
 router.post('/', function(req,res,next){
+  let prof_id = Number(req.signedCookies.user_id);
+  console.log(typeof prof_id);
   let date = {
-    profile_id: req.signedCookies.user_id,
+    profile_id: prof_id,
     suitor_id: req.body.suitor_id,
     location : req.body.location,
     date: req.body.date,
@@ -31,7 +33,7 @@ router.post('/', function(req,res,next){
 
   }
   knex('date').insert(date).then(()=>{
-    res.redirect(`/dates/${req.SignedCookies.user_id}`)
+    res.redirect(`/date`)
   })
   console.log(req.body);
 })
