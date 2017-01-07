@@ -9,9 +9,9 @@
     </div>
     <hr>
     <div class="row">
-        <form class="suitor-info" action="{{data.id}}/update" method="post">
-          <!-- <form class="" action="" method=""> -->
 
+          <!-- <form class="" action="" method=""> -->
+          <form class="suitor-info" action="{{data.id}}/updatePhoto" method="post">
             <div class="col s12 m3 outline-me">
                 <img class="circle responsive-img" src="{{data.image_url}}" alt="">
                 <div class="input-field col s12">{{data.rating}}
@@ -19,17 +19,27 @@
                 <input type="text" name="photo_url" placeholder="Enter image URL to change Photo">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
             </div>
+          </form>
+          <form class="suitor-info" action="{{data.id}}/update" method="post">
             <div class="col s12 m9">
 
                 <div class="input-field col s6">
+                    <label for="name">Name</label>
                     <input value="{{data.name}}" id="name" name="name" type="text">
                 </div>
                 <div class="input-field col s6">
+                    <label for="age">Age</label>
                     <input value="{{data.age}}" id="age" name="age" type="text">
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s6">
+                    <label for="where_met">Where you met??</label>
                     <input value="{{data.where_met}}" id="where_met" name="where_met" type="text">
                 </div>
+                <div class="input-field col s6">
+                    <label for="rating">Rating 1-10</label>
+                    <input value="{{data.rating}}" id="rating" name="rating" type="number" min="1" max="10">
+                </div>
+
 
 
                 <div class="row">

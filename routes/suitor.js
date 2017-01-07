@@ -53,6 +53,7 @@ router.get('/:id', function(req, res, next) {
 router.post('/:id/update', auth.allowAccess, function(req, res, next) {
     // console.log("suitor_interests = "+req.body.suitor_interests);
     console.log(req.body)
+    console.log("^^req.body^^")
     // delete all suitor interests
     knex('suitor_interest')
         .where('suitor_id', req.params.id)
@@ -82,7 +83,15 @@ router.post('/:id/update', auth.allowAccess, function(req, res, next) {
             console.log("d = " + data);
             res.redirect(`/suitor/${req.params.id}`);
         });
+    knex('suitor').where('id', req.params.id).update({
 
+      name: req.body.name,
+      age: req.body.age,
+      where_met: req.body.where_met,
+      rating: req.body.rating
+    }).then(data=>{
+      res.redirect(`/suitor/${req.params.id}`)
+    })
     // re-insert suitor interests
     // req.body.suitor_interests.forEach((interest)=>{
     //   knex('suitor_interest')
@@ -96,14 +105,14 @@ router.post('/:id/update', auth.allowAccess, function(req, res, next) {
     // });
 });
 
-// router.post('/:id/updatePhoto', auth.allowAccess, function(req, res, next){
-//   console.log(req.body.photo_url)
-//   knex('profile').where('id', req.params.id).update({
-//     image_url: req.body.photo_url
-//   }).then(data=>{
-//     res.redirect(`/profile/${req.params.id}`);
-//   })
-// });
+router.post('/:id/updatePhoto', auth.allowAccess, function(req, res, next){
+  console.log(req.body.photo_url)
+  knex('suitor').where('id', req.params.id).update({
+    image_url: req.body.photo_url
+  }).then(data=>{
+    res.redirect(`/suitor/${req.params.id}`);
+  })
+});
 
 // router.delete('/:id/delete', auth.allowAccess,function(req, res, next) {
 //    knex('profile').where('id', req.params.id).first().del().then(data => {
