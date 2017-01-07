@@ -77,20 +77,26 @@ nav .input-field input {
 
 /* Contacts page */
 
+span {
+  margin:auto;
+}
 span.stars, span.stars span {
     display: block;
-    background: url(stars.png) 0 -16px repeat-x;
-    width: 80px;
+    background: url(../images/stars.png) 0 -16px repeat-x;
+    width: 76px;
     height: 16px;
 }
 
 span.stars span {
+    margin-left:0;
     background-position: 0 0;
 }
 
 .carousel {
   width:100%;
   margin:auto;
+  height:450px;
+  padding-top:0;
 }
 .carousel .carousel-item {
   width:20vw;
@@ -102,9 +108,33 @@ span.stars span {
 }
 
 .carousel-item .responsive-img {
-
+  border: #2196F3 1px solid;
+  box-shadow: 0px 0px 10px 0px #2196F3;
+  margin-bottom:20px;
+  height:60%;
+  width:80%;
 }
 
+<<<<<<< Updated upstream
+=======
+.add-suitor {
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+}
+#add_suitor {
+  margin-top:1em;
+}
+.hidden_form {
+  display:flex;
+  display:none;
+}
+
+.hidden_form .btn {
+  width:100%;
+}
+
+>>>>>>> Stashed changes
 /* main content index styling */
 
 .leftside {

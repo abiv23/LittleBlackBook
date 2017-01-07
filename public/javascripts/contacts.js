@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.carousel').carousel();
+    $('.carousel').carousel({shift:100});
 
     // vvv STAR RATING vvv
     
