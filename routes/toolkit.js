@@ -26,13 +26,14 @@ router.get('/sos', function(req, res, next) {
 //     res.render('common');
 // });
 
-router.get('/their/:suitor_id', (req, res) => {
+//test url: http://localhost:3000/toolkit/their?suitor_id=2
+router.get('/their', (req, res) => {
     //use suitor_id from req.params.suitor_id to find it's matching interest_id in the suitor_interest table
     //then use that matching interest_id to look up the interest.name in the interest table
     //now need a join to pull interest by interest_id from the interests table
     knex.select('*')
         .from('suitor_interest')
-        .where('suitor_id', req.params.suitor_id)
+        .where('suitor_id', req.query.suitor_id)
         .join('interest', 'suitor_interest.interest_id', 'interest.id')
         .then((suitor_interest) => {
             res.render('toolkit-their-interests', {
