@@ -22,6 +22,17 @@ router.get('/get_contact/:id', function(req,res,next){
 });
 
 router.post('/', function(req,res,next){
+  let date = {
+    profile_id: req.signedCookies.user_id,
+    suitor_id: req.body.suitor_id,
+    location : req.body.location,
+    date: req.body.date,
+    time : req.body.time
+
+  }
+  knex('date').insert(date).then(()=>{
+    res.redirect(`/dates/${req.SignedCookies.user_id}`)
+  })
   console.log(req.body);
 })
 module.exports = router;
