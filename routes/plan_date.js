@@ -15,6 +15,12 @@ router.get('/:id', auth.allowAccess, function(req,res,next) {
     });
 });
 
+router.get('/get_contact/:id', function(req,res,next){
+  knex('suitor').where('id', req.params.id).first().then(suitor => {
+      res.send(suitor)
+});
+});
+
 router.post('/', function(req,res,next){
   console.log(req.body);
 })
