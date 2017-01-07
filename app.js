@@ -17,6 +17,7 @@ var logout = require('./routes/logout')
 var auth = require('./auth/auth.js');
 var plan_date = require('./routes/plan_date')
 var review_date = require('./routes/review_date')
+var date = require('./routes/date');
 var app = express();
 
 
@@ -45,6 +46,7 @@ app.use('/contacts', auth.ensureLoggedIn, auth.setUser, contacts);
 app.use('/toolkit', auth.ensureLoggedIn, toolkit);
 app.use('/plan_date', auth.ensureLoggedIn, plan_date);
 app.use('/review_date', review_date);
+app.use('/date', auth.ensureLoggedIn, date);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

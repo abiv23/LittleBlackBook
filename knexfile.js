@@ -7,6 +7,7 @@ module.exports = {
     development: {
         client: 'pg',
         connection: 'postgres://localhost/littleblackbook'
+        //debug: true
     },
     production: {
         client: 'pg',
