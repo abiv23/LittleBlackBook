@@ -92,6 +92,8 @@ nav .input-field input {
 .row .col .logoutbutton {
   margin-left: 1em;
 }
+
+
 /* Contacts page */
 
 span {
@@ -147,6 +149,12 @@ span.stars span {
 
 .hidden_form .btn {
   width:100%;
+}
+
+/* suitor view */
+
+.suitor-img {
+  margin:auto;
 }
 
 /* main content index styling */
