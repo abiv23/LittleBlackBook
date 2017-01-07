@@ -13,8 +13,10 @@
           <!-- <form class="" action="" method=""> -->
           <form class="suitor-info" action="{{data.id}}/updatePhoto" method="post">
             <div class="col s12 m3 outline-me">
-                <img class="circle responsive-img" src="{{data.image_url}}" alt="">
-                <div class="input-field col s12">{{data.rating}}
+                <img class="circle responsive-img suitor-img" src="{{data.image_url}}" alt="">
+                <div class="input-field col s12">
+
+                  <span class="stars center">{{data.rating}}</span>
                 </div>
                 <input type="text" name="photo_url" placeholder="Enter image URL to change Photo">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
