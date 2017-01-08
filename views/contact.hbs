@@ -5,7 +5,8 @@
             <h5>{{data.where_met}}</h5>
         </div>
         <div class="col s12 m3">
-            <a href="/plan_date"><button class="btn red" type="submit" name="submit">Plan A Date</button></a>
+            <a href="/plan_date"><button class="btn orange" type="submit" name="submit">Plan A Date</button></a>
+            <a href="{{user.id}}/{{data.id}}/delete"><button class="btn red" type="submit" name="delete">Delete Contact</button></a>
         </div>
     </div>
     <hr>
@@ -19,7 +20,7 @@
 
                   <span class="stars center">{{data.rating}}</span>
                 </div>
-                <input type="text" name="photo_url" placeholder="Enter image URL to change Photo">
+                <input type="text" name="image_url" placeholder="Enter image URL to change Photo">
                 <button class="btn blue" type="submit" name="change_photo">Change Photo</button>
             </div>
           </form>
@@ -54,7 +55,10 @@
 
 
                 <div class="row">
-                    <div class="col s2">
+                  <!-- <div class="all-interests"> -->
+
+
+                    <div class="col s12 all-interests">
                         <form action="#">
                             {{#each data.allInterests}}
                                 {{#each this}}
@@ -72,7 +76,8 @@
                                 {{/each}}
                             {{/each}}
                         </form>
-                    </div>
+                        </div>
+                    <!-- </div> -->
                     <div class="col s2">
                     </div>
                 </div>

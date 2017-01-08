@@ -13,6 +13,7 @@ header {
   margin-bottom: 1em;
 }
 
+
 a {
   color: #00B7FF;
 }
@@ -96,6 +97,13 @@ nav .input-field input {
 
 /* Contacts page */
 
+.all-interests{
+  /*outline:solid red 1px;*/
+  height:30vh;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+}
 span {
   margin:auto;
 }
@@ -130,7 +138,17 @@ span.stars span {
   width:200px;
   height:100%;
 }
-
+.card-stacked {
+  display:flex;
+  justify-content: space-between;
+}
+  /*.card-action {
+    display:flex;
+    justify-content:space-around;
+  }*/
+.card-action .btn {
+  width:44%;
+}
 .object-fit_cover { object-fit: cover }
 
 .carousel {
@@ -214,4 +232,10 @@ label.active {
 
 .interest {
   margin-top: 10vh;
+}
+
+
+.button-container {
+  display:flex;
+  justify-content: center;
 }

@@ -6,7 +6,8 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config({
 module.exports = {
     development: {
         client: 'pg',
-        connection: 'postgres://localhost/littleblackbook'
+        connection: 'postgres://localhost/littleblackbook',
+        debug: true
     },
     production: {
         client: 'pg',

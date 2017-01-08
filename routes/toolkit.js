@@ -3,19 +3,21 @@ var router = express.Router();
 var knex = require('../db/knex.js');
 var suitor = require('../db/suitor.js');
 
-/* how can I pass the users ID between the below routes, unless I keep it in the URL the entire time FROM COOKIES!*/
+
 /* all routes are mounted at /toolkit */
 router.get('/', function(req, res, next) {
     let data = {};
     data.id = Number(req.query.date_id);
-    const isSecure = req.app.get('env'!= 'development')
+    const isSecure = req.app.get('env' != 'development')
     res.cookie('date_id', req.query.date_id, {
-      httpOnly: true,
-      signed: true,
-      secure: isSecure
+        httpOnly: true,
+        signed: true,
+        secure: isSecure
     });
     console.log(data);
-    res.render('toolkit', {data});
+    res.render('toolkit', {
+        data
+    });
 });
 
 router.get('/sos', function(req, res, next) {
