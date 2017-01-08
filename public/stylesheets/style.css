@@ -225,3 +225,9 @@ label.active {
 .interest {
   margin-top: 10vh;
 }
+
+
+.button-container {
+  display:flex;
+  justify-content: center;
+}
