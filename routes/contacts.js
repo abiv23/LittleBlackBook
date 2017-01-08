@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex.js');
+var auth = require('../auth/auth.js');
 
 router.get('/', function(req,res,next){
   res.redirect(`/contacts/${req.signedCookies.user_id}`)
 });
 
-router.get('/:id', function(req, res, next) {
+router.get('/:id', auth.allowAccess, function(req, res, next) {
   knex.select('*').from('suitor').where('profile_id', req.params.id).then(data=>{
     res.render('contacts', {data:data});
   })

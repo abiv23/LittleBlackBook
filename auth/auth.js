@@ -51,11 +51,42 @@ function setUser(req, res, next) {
     }
 }
 
+function verifyContact(req,res,next) {
+  let suitor_id = req.params.id;
+  var profile_id = req.signedCookies.user_id[0];
+    knex('suitor').where('profile_id', profile_id).then(suitors=>{
+      let testing = suitors.filter((suitor)=>{
+        return suitor.profile_id == profile_id && suitor_id == suitor.id;
+      });
+      if(testing.length >0) {
+        next();
+      } else {
+        res.status(401);
+        next(new Error('Unauthorized'));
+      }
+    });
+}
+
+function verifyReview(req,res,next) {
+  let date_id = req.query.date_id;
+  var profile_id = req.signedCookies.user_id[0];
+  knex('date').where('date_id', date_id).first().then(dateInfo=>{
+    if(dateInfo.profile_id == profile_id) {
+      next()
+    } else {
+      res.status(401);
+      next(new Error('Unauthorized'));
+    }
+  })
+}
+
 module.exports = {
     ensureLoggedIn,
     allowAccess,
     adminOnly,
     logOut,
     loggedInRedirect,
-    setUser
+    setUser,
+    verifyContact,
+    verifyReview
 };
