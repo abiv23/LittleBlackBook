@@ -68,6 +68,9 @@ nav .input-field input {
 .btn-flat {
   color:#fff;
 }
+.btn-success {
+  width:100%;
+}
 
 .brand-logo {
   margin-left: .5em;
