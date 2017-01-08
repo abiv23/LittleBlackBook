@@ -8,14 +8,11 @@ router.get('/', function(req,res,next){
 
 router.get('/:id', function(req, res, next) {
   knex.select('*').from('suitor').where('profile_id', req.params.id).then(data=>{
-    console.log("DATA BELOW")
-    console.log(data);
     res.render('contacts', {data:data});
   })
 });
 
 router.post('/:id/addnew', function(req,res,next){
-  console.log(req.body)
   var newSuitor = {
     name: req.body.name,
     profile_id: req.params.id,
