@@ -1,8 +1,16 @@
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #eeeeee
   color:#fafafa;
 }
+
+ main {
+   flex: 1 0 auto;
+ }
 
 /* nav styling */
 .container {
@@ -11,6 +19,17 @@ body {
 
 header {
   margin-bottom: 1em;
+}
+
+
+footer {
+  text-align: center;
+  background-color: #757575 !important;
+}
+
+
+ul#menu li {
+    display:inline;
 }
 
 
@@ -131,13 +150,34 @@ span.stars span {
   margin:2px;
 }*/
 .card {
+  /*width: 80vw;*/
   /*background-color:rgba(33,0,33,.3);*/
 }
 
 .card-image {
   width:200px;
   height:100%;
+  background-color: #333 !important;
 }
+
+.card-stacked {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-action {
+  /*margin-top: 1em  !important*/
+}
+
+.card-content {
+  /*display: inline;*/
+}
+
+.card-stacked {
+  display: flex;
+  justify-content: space-between;
+}
+<<<<<<< HEAD
 .card-stacked {
   display:flex;
   justify-content: space-between;
@@ -150,6 +190,10 @@ span.stars span {
   width:44%;
 }
 .object-fit_cover { object-fit: cover }
+=======
+
+/*.object-fit_cover { object-fit: cover }*/
+>>>>>>> footer
 
 .carousel {
   width:100%;
