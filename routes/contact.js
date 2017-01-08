@@ -82,9 +82,10 @@ router.post('/:id/:contact_id/update', auth.allowAccess, function(req, res, next
         })
         .then(data => {
             console.log("d = " + data);
-            res.redirect(`/contact/${req.params.contact_id}`);
+            res.redirect(`/contacts/`);
         });
     knex('suitor').where('id', req.params.contact_id).update({
+
 
             name: req.body.name,
             age: req.body.age,

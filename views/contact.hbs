@@ -42,6 +42,14 @@
                     <label for="rating">Rating 1-10</label>
                     <input value="{{data.rating}}" id="rating" name="rating" type="number" min="1" max="10">
                 </div>
+                <div class="input-field col s12">
+                    <label for="rating">Notes</label>
+                    {{#if data.note}}
+                    <input value="{{data.note}}" id="rating" name="notes" type="text">
+                    {{else}}
+                    <input placeholder="Enter a note about {{data.name}}" id="rating" name="notes" type="text">
+                    {{/if}}
+                </div>
 
 
 

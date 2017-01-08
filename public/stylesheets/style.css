@@ -99,6 +99,9 @@ nav .input-field input {
 span {
   margin:auto;
 }
+.star-holder{
+  float:left;
+}
 span.stars, span.stars span {
     display: block;
     background: url(../images/stars.png) 0 -16px repeat-x;
@@ -110,6 +113,25 @@ span.stars span {
     margin-left:0;
     background-position: 0 0;
 }
+.centered-and-cropped {
+ object-fit: cover;
+ border-style: solid!important
+}
+
+
+/*.card-content {
+  margin:2px;
+}*/
+.card {
+  /*background-color:rgba(33,0,33,.3);*/
+}
+
+.card-image {
+  width:200px;
+  height:100%;
+}
+
+.object-fit_cover { object-fit: cover }
 
 .carousel {
   width:100%;
