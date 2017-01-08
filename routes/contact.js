@@ -115,12 +115,11 @@ router.post('/:id/:contact_id/updatePhoto', auth.allowAccess, function(req, res,
   })
 });
 
-// router.delete('/:id/delete', auth.allowAccess,function(req, res, next) {
-//    knex('profile').where('id', req.params.id).first().del().then(data => {
-//       res.clearCookie('user_id');
-//       res.redirect('/');
-//    });
-// });
+router.get('/:id/:contact_id/delete', auth.allowAccess,function(req, res, next) {
+   knex('suitor').where('id', req.params.contact_id).first().del().then(data => {
+      res.redirect('/');
+   });
+});
 
 
 module.exports = router;
