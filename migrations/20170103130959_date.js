@@ -8,8 +8,8 @@ exports.up = function(knex, Promise) {
         table.text('location');
         table.integer('rating');
         table.text('note');
-        table.integer('date_review);
-    })
+        table.integer('date_review');
+    });
 };
 
 exports.down = function(knex, Promise) {
