@@ -7,11 +7,8 @@ exports.up = function(knex, Promise) {
         table.time('time');
         table.text('location');
         table.integer('rating');
-<<<<<<< HEAD
         table.text('note');
-=======
-        table.text('note').defaultTo('');
->>>>>>> date-review
+        table.integer('date_review);
     })
 };
 
