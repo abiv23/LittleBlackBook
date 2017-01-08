@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex.raw('DELETE FROM date; ALTER SEQUENCE date_id_seq RESTART WITH 6')
+    return knex.raw('DELETE FROM date; ALTER SEQUENCE date_id_seq RESTART WITH 7')
         .then(() => {
             const dates = [{
                 id: 1,
@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
                 date: '01/04/2017',
                 time: '01:00:00',
                 location: 'Chucky Cheese',
-                rating: 10
+                date_review: 10
             }, {
                 id: 2,
                 suitor_id: 2,
@@ -17,7 +17,7 @@ exports.seed = function(knex, Promise) {
                 date: '01/02/2017',
                 time: '01:00:00',
                 location: 'Linger',
-                rating: 10
+                date_review: 10
             }, {
                 id: 3,
                 suitor_id: 3,
@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
                 date: '01/04/2017',
                 time: '01:00:00',
                 location: '7-11',
-                rating: 10
+                date_review: 10
             }, {
                 id: 4,
                 suitor_id: 4,
@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
                 date: '01/05/2017',
                 time: '01:00:00',
                 location: 'Colt and Grey',
-                rating: 10
+                date_review: 10
             },
             {
                 id: 5,
@@ -42,7 +42,20 @@ exports.seed = function(knex, Promise) {
                 date: '01/05/2017',
                 time: '01:00:00',
                 location: 'Bathroom',
-                rating: 2
+                date_review: 2,
+                has_occured: true,
+                date_note: 'Had a great time in the bathroom!'
+            },
+            {
+                id: 6,
+                suitor_id: 4,
+                profile_id: 2,
+                date: '01/12/2012',
+                time: '01:30:00',
+                location: 'Bubba Gump Shrimp',
+                date_review: 2,
+                has_occured: true,
+
             }]
             return knex('date').insert(dates);
         });

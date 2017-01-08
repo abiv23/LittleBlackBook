@@ -6,8 +6,8 @@ exports.up = function(knex, Promise) {
         table.date('date');
         table.time('time');
         table.text('location');
-        table.integer('rating');
-        table.text('note');
+        table.text('date_note');
+        table.boolean('has_occured').default(false);
         table.integer('date_review');
     });
 };
