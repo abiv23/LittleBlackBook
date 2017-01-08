@@ -6,14 +6,16 @@ var suitor = require('../db/suitor.js');
 /* how can I pass the users ID between the below routes, unless I keep it in the URL the entire time FROM COOKIES!*/
 /* all routes are mounted at /toolkit */
 router.get('/', function(req, res, next) {
-    console.log(req.query.date_id);
+    let data = {};
+    data.id = Number(req.query.date_id);
     const isSecure = req.app.get('env'!= 'development')
     res.cookie('date_id', req.query.date_id, {
       httpOnly: true,
       signed: true,
       secure: isSecure
     });
-    res.render('toolkit');
+    console.log(data);
+    res.render('toolkit', {data});
 });
 
 router.get('/sos', function(req, res, next) {
@@ -34,13 +36,13 @@ router.get('/sos', function(req, res, next) {
 // });
 
 //test url: http://localhost:3000/toolkit/their?suitor_id=2
-router.get('/their', (req, res) => {
+router.get('/their/:id', (req, res) => {
     //use suitor_id from req.params.suitor_id to find it's matching interest_id in the suitor_interest table
     //then use that matching interest_id to look up the interest.name in the interest table
     //now need a join to pull interest by interest_id from the interests table
     knex.select('*')
         .from('suitor_interest')
-        .where('suitor_id', req.query.suitor_id)
+        .where('suitor_id', req.params.id)
         .join('interest', 'suitor_interest.interest_id', 'interest.id')
         .then((suitor_interest) => {
             res.render('toolkit-their-interests', {

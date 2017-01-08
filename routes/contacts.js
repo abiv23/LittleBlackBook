@@ -19,7 +19,8 @@ router.post('/:id/addnew', function(req,res,next){
     age: req.body.age,
     where_met: req.body.where_met,
     rating: req.body.rating,
-    image_url: req.body.image_url
+    image_url: req.body.image_url,
+    note: req.body.notes
   }
   knex('suitor').insert(newSuitor).returning('profile_id').then(data=>{
     res.redirect('/')
