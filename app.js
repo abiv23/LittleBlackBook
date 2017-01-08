@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use('/', index);
 app.use('/profile', auth.ensureLoggedIn, profile);
-app.use('/contact', auth.ensureLoggedIn, contact);
+app.use('/contact', auth.ensureLoggedIn, auth.setUser, contact);
 app.use('/login', login);
 app.use('/admin', auth.adminOnly, admin);
 app.use('/signup', signup);
