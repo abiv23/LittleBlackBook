@@ -3,23 +3,26 @@
         <h3>My Contacts</h3>
     </div>
     <hr>
+    {{#if data}}
     <div class="carousel container">
-
       {{#each data}}
-        <div class="carousel-item">
-          <div class="carousel-fixed-item center">
-            <h4>{{this.name}}</h4>
-            <h6>{{this.where_met}}</h6>
-            <span class="stars center">{{this.rating}}</span>
+
+          <div class="carousel-item">
+            <div class="carousel-fixed-item center">
+              <h4>{{this.name}}</h4>
+              <h6>{{this.where_met}}</h6>
+              <span class="stars center">{{this.rating}}</span>
+            </div>
+            <a href="/contact/{{this.id}}">
+              <img class="circle responsive-img" src="{{this.image_url}}">
+            </a>
+
           </div>
-          <a href="/contact/{{this.id}}">
-            <img class="circle responsive-img" src="{{this.image_url}}">
-          </a>
-
+        {{/each}}
         </div>
-
-      {{/each}}
-    </div>
+    {{else}}
+      <h4 class="center">No Contacts! Try Adding Some Now</h4>
+    {{/if}}
 
     <div class="add-suitor container">
       <button class="btn blue" id="add_suitor"type="submit" name="add_suitor">Add New Contact</button>
