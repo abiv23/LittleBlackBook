@@ -6,6 +6,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #eeeeee
   color:#fafafa;
+
+  padding-bottom: 50px;
+
 }
 
  main {
@@ -23,8 +26,17 @@ header {
 
 
 footer {
+  width:100%;
   text-align: center;
   background-color: #757575 !important;
+  position: fixed;
+  bottom:0;
+
+}
+
+.page-footer {
+  color: #fff ;
+  padding-bottom: 1em;
 }
 
 
@@ -177,7 +189,7 @@ span.stars span {
   display: flex;
   justify-content: space-between;
 }
-<<<<<<< HEAD
+
 .card-stacked {
   display:flex;
   justify-content: space-between;
@@ -190,10 +202,9 @@ span.stars span {
   width:44%;
 }
 .object-fit_cover { object-fit: cover }
-=======
 
 /*.object-fit_cover { object-fit: cover }*/
->>>>>>> footer
+
 
 .carousel {
   width:100%;
