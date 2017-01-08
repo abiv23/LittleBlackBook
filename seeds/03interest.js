@@ -11,6 +11,22 @@ exports.seed = function(knex, Promise) {
                 interest_name: 'Skiing'
             }, {
                 interest_name: 'Reading'
+            }, {
+                interest_name: 'Cycling'
+            }, {
+                interest_name: 'Dogs'
+            }, {
+                interest_name: 'Coffee'
+            }, {
+                interest_name: 'Craft Beer'
+            }, {
+                interest_name: 'Reality TV'
+            }, {
+                interest_name: 'Archaeology'
+            }, {
+                interest_name: 'Board Games'
+            }, {
+                interest_name: 'Church'
             }]
             return knex('interest').insert(interests);
         }));
