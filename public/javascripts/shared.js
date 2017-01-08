@@ -8,7 +8,7 @@ $('.zipbutton').click((event)=>{
 
 if($('.suitor_select').length > 0) {
   let id = $('.suitor_select').val();
-  $.get(`https://littleblackbook-g-38.herokuapp.com/${id}`)
+  $.get(`https://littleblackbook-g-38.herokuapp.com/plan_date/get_contact/${id}`)
   .done((suitor)=> {
     $('.contact_container').empty();
     $('.contact_container').hide();
@@ -41,7 +41,7 @@ if($('.suitor_select').length > 0) {
 
 $('.suitor_select').change(()=> {
   let id = $('.suitor_select').val();
-  $.get(`https://littleblackbook-g-38.herokuapp.com/${id}`)
+  $.get(`https://littleblackbook-g-38.herokuapp.com/plan_date/get_contact/${id}`)
   .done((suitor)=> {
     $('.contact_container').empty();
     $('.contact_container').hide();
