@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
-    return knex.raw('DELETE FROM date; ALTER SEQUENCE date_id_seq RESTART WITH 5')
+    return knex.raw('DELETE FROM date; ALTER SEQUENCE date_id_seq RESTART WITH 6')
         .then(() => {
             const dates = [{
                 id: 1,
@@ -34,6 +34,15 @@ exports.seed = function(knex, Promise) {
                 time: '01:00:00',
                 location: 'Colt and Grey',
                 rating: 10
+            },
+            {
+                id: 5,
+                suitor_id: 1,
+                profile_id: 2,
+                date: '01/05/2017',
+                time: '01:00:00',
+                location: 'Bathroom',
+                rating: 2
             }]
             return knex('date').insert(dates);
         });
