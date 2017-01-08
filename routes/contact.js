@@ -6,8 +6,7 @@ var auth = require('../auth/auth.js');
 
 /* GET users listing. */
 // router.get('/:id', auth.allowAccess, function(req, res, next) {
-router.get('/:id', function(req, res, next) {
-    console.log(req.params.id)
+router.get('/:id', auth.verifyContact, function(req, res, next) {
     knex('suitor').where('id', req.params.id).first().then(suitor => {
         suitor.interests = [];
         suitor.allInterests = [];

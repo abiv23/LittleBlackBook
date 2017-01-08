@@ -3,12 +3,12 @@ var router = express.Router();
 var knex = require('../db/knex.js');
 var moment = require('moment');
 var methodOverride = require('method-override')
+var auth = require('../auth/auth.js');
 
 /* routes are mounted at review_date */
 /* pull in date info with render http://localhost:3000/review_date?date_id=7 */
-router.get('/', (req, res) => {
+router.get('/', auth.verifyReview,  (req, res,next) => {
     let date_id = Number(req.signedCookies.date_id);
-    console.log(date_id);
     return knex('date')
         .where('date_id', req.query.date_id)
         .first()
@@ -20,7 +20,6 @@ router.get('/', (req, res) => {
                 .where('date.date_id', req.query.date_id)
                 .join('suitor', 'date.suitor_id', 'suitor.id')
                 .then((date_data) => {
-                    console.log(date_data)
                     date_data[0].date = moment(date_data.date).format('MMM Do');
                     let date = date_data[0];
                     res.render('review_date', {
