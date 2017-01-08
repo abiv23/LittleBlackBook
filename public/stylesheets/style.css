@@ -102,6 +102,12 @@ nav .input-field input {
   width: 7em;
 }
 
+.contact-buttons {
+  display:flex;
+  justify-content:space-between;
+  margin-top:2em;
+}
+
 .row .col .passwordinput {
   margin-left: 1em;
   font-size: 1.2em;
