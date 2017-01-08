@@ -40,6 +40,9 @@ $(document).ready(function() {
       <div class="input-field col s6">
         <input id="image URL" type="text" class="validate" placeholder="paste image URL here" name="image_url">
       </div>
+      <div class="input-field col s6">
+        <input id="image URL" type="text" class="validate" placeholder="Notes about your contact..." name="notes">
+      </div>
       <div class="crud-buttons">
         <button class="btn green waves-effect waves-light" id="add-suitor" type="submit">Submit</button>
       </div>
@@ -47,9 +50,9 @@ $(document).ready(function() {
         );
 
     $('#add_suitor').on('click',(function(){
-      $("html, body").animate({
-            scrollTop: $(document).height()
-        }, "slow");
+      // $("html, body").animate({
+            // scrollTop: $(document).height()
+        // }, "slow");
         $('.hidden_form').fadeIn(1600);
     }));
 });

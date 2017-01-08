@@ -88,7 +88,8 @@ router.post('/:id/:contact_id/update', auth.allowAccess, function(req, res, next
       name: req.body.name,
       age: req.body.age,
       where_met: req.body.where_met,
-      rating: req.body.rating
+      rating: req.body.rating,
+      note: req.body.notes
     }).then(data=>{
       res.redirect(`/contacts/`)
     })
