@@ -19,6 +19,7 @@ var plan_date = require('./routes/plan_date')
 var review_date = require('./routes/review_date')
 var date = require('./routes/date');
 var app = express();
+// var bindings = require('bindings')('bcrypt_lib');
 
 
 // view engine setup
