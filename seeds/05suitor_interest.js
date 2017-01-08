@@ -2,7 +2,7 @@ exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
     // return knex('suitor_interest').del().then(
     // knex.raw('TRUNCATE suitor_interest RESTART IDENTITY CASCADE;')
-    knex.raw('DELETE FROM suitor_interest; ALTER SEQUENCE suitor_interest_id_seq RESTART WITH 5')
+    knex.raw('DELETE FROM suitor_interest; ALTER SEQUENCE suitor_interest_id_seq RESTART WITH 7')
         .then(() => {
             const suitor_interests = [{
                 id: 1,
