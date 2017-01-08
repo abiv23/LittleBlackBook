@@ -6,6 +6,13 @@ var suitor = require('../db/suitor.js');
 /* how can I pass the users ID between the below routes, unless I keep it in the URL the entire time FROM COOKIES!*/
 /* all routes are mounted at /toolkit */
 router.get('/', function(req, res, next) {
+    console.log(req.query.date_id);
+    const isSecure = req.app.get('env'!= 'development')
+    res.cookie('date_id', req.query.date_id, {
+      httpOnly: true,
+      signed: true,
+      secure: isSecure
+    });
     res.render('toolkit');
 });
 
