@@ -59,7 +59,7 @@ router.post('/:id/update', auth.allowAccess, function(req, res, next) {
             last_name: req.body.last_name,
             email: req.body.email
         }).then(data => {
-            res.redirect(`/profile/${req.params.id}`)
+            res.redirect(`/`)
         });
     }
 

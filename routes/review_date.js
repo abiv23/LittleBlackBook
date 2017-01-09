@@ -43,7 +43,7 @@ router.put('/', (req, res, next) => {
     console.log(req.signedCookies.date_id);
     knex('date').where('date_id', req.signedCookies.date_id).update(dateReview).then(data => {
         res.clearCookie('date_id');
-        res.redirect(`/`)
+        res.redirect(`/date`)
     })
 })
 

@@ -68,8 +68,17 @@ $('.suitor_select').change(()=> {
 
 
 
-  })
-}
-);
+      })
+    }
+    );
+
+    // if($('.before-dates').length > 0){
+    //   if ($('.before-dates').children().length === 0){
+    //     $('.completed').css('display','none');
+    //     // $('.upcoming').css('display',)
+    //   }
+    // }
+    // console.log($('.before-dates').children().length);
+
 
 })

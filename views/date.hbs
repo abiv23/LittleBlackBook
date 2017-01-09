@@ -1,7 +1,8 @@
 <div class='container'>
     <h4>Date Log</h4>
-    <div>
+
     <div class='completed'>
+
         <table>
           <caption>
           <h5>Previous Dates</h5>
@@ -16,7 +17,7 @@
                     <th data-field='date-notes'>Date Notes</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="before-dates">
                 {{#each date}}
                     {{#if this.has_occured}}
                         <tr>
@@ -58,5 +59,4 @@
             </tbody>
         </table>
     </div>
-</div>
 </div>
