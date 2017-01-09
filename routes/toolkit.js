@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
       });
       let data = {}
       data.id = date.suitor_id;
+      data.date_id = req.query.date_id;
       console.log(data);
       res.render('toolkit', {data});
     });
