@@ -51,10 +51,10 @@ router.get('/:id', auth.verifyContact, function(req, res, next) {
 
 
 router.post('/:id/:contact_id/update', auth.allowAccess, function(req, res, next) {
-    // console.log("suitor_interests = "+req.body.suitor_interests);
+
     console.log(req.body)
     console.log("^^req.body^^")
-        // delete all suitor interests
+
     knex('suitor_interest')
         .where('suitor_id', req.params.contact_id)
         .del()
@@ -67,8 +67,6 @@ router.post('/:id/:contact_id/update', auth.allowAccess, function(req, res, next
                     })
                     //next();
             } else {
-                console.log("suitor_interests = " + req.body.suitor_interests);
-                console.log("d1 = " + data);
                 let s = req.body.suitor_interests.map((interest) => {
                     return knex('suitor_interest')
                         .insert({
@@ -80,9 +78,10 @@ router.post('/:id/:contact_id/update', auth.allowAccess, function(req, res, next
             }
         })
         .then(data => {
-            console.log("d = " + data);
             res.redirect(`/contacts/`);
         });
+
+
     knex('suitor').where('id', req.params.contact_id).update({
 
 
